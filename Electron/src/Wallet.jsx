@@ -57,10 +57,14 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
         //  const prvt =  Buffer.from(child.privateKey).toString("hex");
         //  const pblc = Buffer.from(child.publicKey).toString("hex");
 
+        const b1 = p1.buffer;
+        const b2 = p1.buffer;
+
+
         const decoder = new TextDecoder('utf-8');
 
-        const prvt = decoder.decode(p1);
-        const pblc = decoder.decode(p2);
+        const prvt = decoder.decode(b1);
+        const pblc = decoder.decode(b2);
 
 
 
