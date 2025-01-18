@@ -52,24 +52,12 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
         console.log("child",child);
 
 
-        // const p1 =  child.privateKey.toString("hex");
-        // const p2 = child.publicKey.toString("hex");
-         const prvt =  Buffer.from(child.privateKey).toString("hex");
-         const pblc = Buffer.from(child.publicKey).toString("hex");
-
-        // const b1 = p1.buffer;
-        // const b2 = p1.buffer;
-
-        // const prvt = String.fromCharCode.apply(...p1);
-        // const pblc = String.fromCharCode.apply(...p2);
+        //  const prvt =  Buffer.from(child.privateKey).toString("hex");
+        //  const pblc = Buffer.from(child.publicKey).toString("hex");
 
 
-        // const decoder = new TextDecoder('utf-8');
-
-        // const prvt = decoder.decode(b1);
-        // const pblc = decoder.decode(b2);
-
-
+          const prvt = toHex(child.privateKey);
+          const pblc = toHex(child.publicKey);
 
 
 
