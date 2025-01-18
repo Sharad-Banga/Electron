@@ -78,6 +78,8 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
       } 
       
       else if (pathType === "60") {
+        const root = HDKey.fromMasterSeed(seed);
+
         const child = root.derive(path);
         if (!child.privateKey) {
           throw new Error("Failed to derive Ethereum keys");
