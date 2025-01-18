@@ -9,9 +9,28 @@ import bs58 from "bs58";
 import * as bip32 from "bip32";
 import { HDKey } from "@scure/bip32";
 
-export const Wallet = ({ phrase, pathType }) => {
+export const Wallet = ({ phrase, pathType ,coin }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [publicKeys, setPublicKeys] = useState([]);
+
+  const clearWallet =()=>{
+    setPublicKeys([]);
+  }
+  const dltprsnt = (p) => {
+    const updatedTask = publicKeys.filter((val) => val !== p);
+    setPublicKeys(updatedTask);
+  }
+
+  const pblicCopyToClipboard = async (text) => {
+     await navigator.clipboard.writeText(text);
+    alert("public key copied !!")
+
+  };
+  const prvtCopyToClipboard = async (text) => {
+    await navigator.clipboard.writeText(text);
+    alert("private key copied !!")
+
+  };
 
   const addWallet = () => {
     try {
@@ -86,11 +105,31 @@ export const Wallet = ({ phrase, pathType }) => {
 
   return (
     <div className="wallet-body">
-      <button onClick={addWallet}>Add Wallet</button>
+      <div className="imp">
+      <h1>{coin} Wallet</h1>
+      <div className="buttons">
+        <button className="add-btn" onClick={addWallet}>Add Wallet</button>
+        <button className="dlt-btn" onClick={clearWallet}>Clear Wallets</button>
+      </div>
+      </div>
       {publicKeys.map((p, index) => (
         <div key={index}>
-          <p>Public Key: {p.publicKey}</p>
-          <p>Private Key: {p.privateKey}</p>
+          <div className="wal">
+
+            <div className="hd">
+            <h3>Wallet {index+1}</h3>
+            <button onClick={()=>dltprsnt(p)}>🗑</button>
+
+            </div>
+            <div className="key-cont">
+              <h4>Public Key:<button onClick={()=>pblicCopyToClipboard(p.publicKey)}>⿻</button></h4>
+              <p >{p.publicKey}</p>
+              
+              <h4>Private Key: <button onClick={()=>prvtCopyToClipboard(p.privateKey)}>⿻</button></h4>
+              <p  >{p.privateKey}</p>
+              
+            </div>
+          </div>
         </div>
       ))}
     </div>

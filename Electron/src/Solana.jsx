@@ -57,7 +57,7 @@ export const Solana = () => {
       {isGenerated && (
         <>
           <SeedPhrase phrase={mnemonic} />
-          <Wallet phrase={mnemonic} pathType={"501"} />
+          <Wallet phrase={mnemonic} pathType={"501"} coin={"Solana"} />
         </>
       )}
     </div>

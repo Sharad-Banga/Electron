@@ -13,8 +13,9 @@
   font-size: xxx-large;
   
 }
-.nav .logoName span{
-  color: #FF96D5;
+.nav .logoName a{
+  color: #df7ef8;
+  text-decoration: none;
 }
 
 .nav {

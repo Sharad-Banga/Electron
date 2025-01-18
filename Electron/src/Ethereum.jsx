@@ -63,7 +63,7 @@ export const Ethereum = () => {
       {isGenerated && (
         <>
           <SeedPhrase phrase={mnemonic} />
-          <Wallet phrase={mnemonic} pathType={"60"} />
+          <Wallet phrase={mnemonic} pathType={"60"} coin={"Ethereum"} />
         </>
       )}
     </div>

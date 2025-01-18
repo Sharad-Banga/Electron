@@ -15,7 +15,8 @@ function App() {
         <nav className="nav">
           
           <div className="logoName">
-              ELECTRON</div>
+            <a href="/">ELECTRON</a>
+              </div>
           <Link className="home-link" to="/">Home</Link>
         </nav>
         <br />

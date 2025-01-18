@@ -18,9 +18,9 @@ export const SeedPhrase = ({ phrase }) => {
 
   return (
     
-    <div className="seedphrase-container">
+    <div onClick={shownHandler} className="seedphrase-container">
       <div className="header-seed"><h1>Seed Phrase</h1>
-      <button onClick={shownHandler}>{show?"🐵":"🙈"}</button></div>
+      <button >{show?"🐵":"🙈"}</button></div>
       {show ? (
         <div className="mnemonic-grid" onClick={copyToClipboard}>
           {phrase.split(" ").map((word, index) => (
