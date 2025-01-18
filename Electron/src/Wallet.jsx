@@ -82,8 +82,8 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
 
         const child = root.derive(path);
 
-        const privateKey = toHex(child.privateKey);
-        const wallet = new ethers.Wallet(`0x${privateKey}`);
+        const ethprvt = toHex(child.privateKey);
+        const wallet = new ethers.Wallet(`0x${ethprvt}`);
         const ethpblc = wallet.address;
         
 
