@@ -78,17 +78,14 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
       } 
       
       else if (pathType === "60") {
-        const seed = mnemonicToSeedSync(phrase);
-        console.log("Seed (hex):", seed.toString("hex"));
+        const child = root.derive(path);
+        if (!child.privateKey) {
+          throw new Error("Failed to derive Ethereum keys");
+        }
 
-        const root = HDKey.fromMasterSeed(seed);
-        console.log("root",root);
-        
-        const childKey = root.derive(path);
-        console.log("ck",childKey);
-        
-        const ethprvt =  Buffer.from(childKey.privateKey).toString("hex");
-        const ethpblc = Buffer.from(childKey.publicKey).toString("hex");
+        const ethpblc = toHex(child.privateKey);
+        const wallet = new ethers.Wallet(`0x${privateKey}`);
+        const ethprvt = wallet.address;
         
 
         

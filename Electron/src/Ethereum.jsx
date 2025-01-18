@@ -12,8 +12,8 @@ export const Ethereum = () => {
 
   const generate = () => {
     try {
-      const mn = generateMnemonic(wordlist, 128); // specify 128 bits for 12 words
-      console.log("Generated mnemonic:", mn); // debug log
+      const mn = generateMnemonic(wordlist, 128);
+      console.log("Generated mnemonic:", mn); 
       setMnemonic(mn);
       setIsGenerated(true);
       setError("");
