@@ -81,11 +81,8 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
         const root = HDKey.fromMasterSeed(seed);
 
         const child = root.derive(path);
-        if (!child.privateKey) {
-          throw new Error("Failed to derive Ethereum keys");
-        }
 
-        const ethpblc = toHex(child.privateKey);
+        const privateKey = toHex(child.privateKey);
         const wallet = new ethers.Wallet(`0x${privateKey}`);
         const ethprvt = wallet.address;
         
