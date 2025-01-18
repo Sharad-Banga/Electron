@@ -1,0 +1,71 @@
+.wallet-body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.wallet-body button {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.wallet-body button:hover {
+  background-color: #45a049;
+}
+
+.wallet-body div {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.wallet-body div:last-child {
+  font-weight: bold;
+  font-size: 16px;
+  color: #2e7d32; /* Dark green color for public keys */
+}
+
+.add-wallet-btn {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.wallets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.wallet-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.key-row {
+  margin: 10px 0;
+  word-break: break-all;
+}
+
+.key-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.key-value {
+  font-family: monospace;
+}

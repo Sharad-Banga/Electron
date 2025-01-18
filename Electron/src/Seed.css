@@ -1,0 +1,64 @@
+
+.seedphrase-container {
+  background-color:transparent;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 0px;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 4px 10px rgba(44, 43, 43, 0.2);
+  border: 0.3px solid rgba(255, 255, 255, 0.34);
+}
+.seedphrase-container .header-seed{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.seedphrase-container .header-seed button{
+  background-color:transparent;
+  border: 0px;
+  color: white;
+  font-size: larger;
+}
+.mnemonic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.mnemonic-word {
+  background-color: #321a4192;
+  padding: 15px 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #333;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.mnemonic-word:hover {
+  background-color: #070707ce;
+  transform: translateY(-3px);
+}
+
+.copy-info {
+  color: #888;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.placeholder {
+  font-size: 1rem;
+  color: #888;
+  margin-top: 20px;
+}

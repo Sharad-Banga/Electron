@@ -12,22 +12,33 @@
   "dependencies": {
     "@noble/hashes": "^1.7.0",
     "@scure/bip32": "^1.6.1",
-    "@scure/bip39": "^1.5.1",
+    "bip32": "^6.0.0",
+
     "bip39": "^3.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.1.2"
+    "react-router-dom": "^7.1.2",
+    "@scure/bip39": "^3.0.0",
+"ed25519-hd-key": "^1.2.0",
+"@solana/web3.js": "^1.73.0",
+"tweetnacl": "^1.0.4",
+"ethers": "^6.0.0",
+"bs58": "^5.0.0"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
+    "stream-browserify": "^3.0.0",
     "vite": "^6.0.5"
   }
 }
