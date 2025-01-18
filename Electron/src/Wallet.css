@@ -135,3 +135,19 @@
   background-color: transparent;
   color: #ccc;
 }
+
+@media screen and (max-width: 380px) {
+  .wallet-body .wal .hd {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .wallet-body .wal .hd button {
+    margin-top: 10px;
+  }
+  
+  .wallet-body .imp {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

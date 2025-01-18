@@ -66,37 +66,37 @@
 
 @media screen and (max-width: 768px) {
   .seedphrase-container {
-    width: 90vw; /* Adjust width for mobile devices */
-    margin-left: 5%; /* Reduce margin for better alignment */
-    padding: 15px; /* Adjust padding for smaller screens */
+    width: 90vw; 
+    margin-left: 5%;
+    padding: 15px; 
   }
 
   .seedphrase-container .header-seed {
-    flex-direction: column; /* Stack header content vertically */
+    flex-direction: column; 
     margin-left: 5px;
     margin-right: 5px;
   }
 
   .seedphrase-container .header-seed button {
-    font-size: 1.2rem; /* Adjust button font size for mobile */
+    font-size: 1.2rem; 
   }
 
   .mnemonic-grid {
-    grid-template-columns: repeat(2, 1fr); /* Use 2 columns on small screens */
-    gap: 10px; /* Reduce gap between grid items */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
   }
 
   .mnemonic-word {
-    padding: 10px 5px; /* Adjust padding to fit better on mobile */
-    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    padding: 10px 5px;
+    font-size: 0.9rem; 
   }
 
   .copy-info {
-    font-size: 0.8rem; /* Reduce font size for mobile screens */
+    font-size: 0.8rem; 
   }
 
   .placeholder {
-    font-size: 0.9rem; /* Adjust placeholder font size for smaller screens */
+    font-size: 0.9rem; 
     margin-top: 15px;
   }
 }

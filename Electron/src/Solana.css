@@ -76,3 +76,61 @@ p{
   font-size: medium;
   gap: 1px;
 }
+
+
+@media screen and (max-width: 768px) {
+  .solana-container {
+    padding: 10px;
+  }
+
+  .mnemonic {
+    font-size: 1rem;
+    padding-left: 5%;
+  }
+
+  .generate-btn {
+    width: 60%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    padding-left: 5%;
+  }
+
+  .solana-container .input {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .solana-container .input input {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mnemonic {
+    font-size: 0.9rem;
+    padding-left: 3%;
+  }
+
+  .generate-btn {
+    width: 80%;
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding-left: 3%;
+  }
+
+  .solana-container .input {
+    width: 90%;
+    margin-left: 3%;
+  }
+
+  .solana-container .input input {
+    font-size: 0.8rem;
+  }
+}
