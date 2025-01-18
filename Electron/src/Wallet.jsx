@@ -60,8 +60,8 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
         // const b1 = p1.buffer;
         // const b2 = p1.buffer;
 
-        const prvt = String.fromCharCode.apply(null, p1);
-        const pblc = String.fromCharCode.apply(null, p2);
+        const prvt = String.fromCharCode.apply(...p1);
+        const pblc = String.fromCharCode.apply(...p2);
 
 
         // const decoder = new TextDecoder('utf-8');
