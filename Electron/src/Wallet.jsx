@@ -14,6 +14,11 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [publicKeys, setPublicKeys] = useState([]);
 
+  const toHex = (buffer) => {
+    return Array.from(buffer)
+      .map(b => b.toString(16).padStart(2, '0'))
+      .join('');
+  };
   const clearWallet =()=>{
     setPublicKeys([]);
   }
