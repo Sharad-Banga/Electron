@@ -13,6 +13,7 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
 .home-cnt button:hover{
   background-color: black;
   color: white;
@@ -41,5 +42,4 @@
 
 .home-cnt  .btn-2{
   margin-left: 20px;
-
 }
