@@ -13,13 +13,21 @@ import { HDKey } from "@scure/bip32";
 export const Wallet = ({ phrase, pathType ,coin }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [publicKeys, setPublicKeys] = useState([]);
+  const [visibleKeys, setVisibleKeys] = useState({}); // Add this state
+
+  const toggleVisibility = (index) => {
+    setVisibleKeys(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
 
   const toHex = (buffer) => {
     return Array.from(buffer)
       .map(b => b.toString(16).padStart(2, '0'))
       .join('');
   };
-  const clearWallet =()=>{
+  const clearWallet =()=> {
     setPublicKeys([]);
   }
   const dltprsnt = (p) => {
@@ -45,9 +53,6 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
 
       const path = `m/44'/${pathType}'/${currentIndex}'/0'`;
 
-      
-
-
       let privateKeyEncoded, publicKeyEncoded;
 
       if (pathType === "501") {
@@ -56,24 +61,17 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
         console.log("root",root);
         console.log("child",child);
 
-
-        //  const prvt =  Buffer.from(child.privateKey).toString("hex");
-        //  const pblc = Buffer.from(child.publicKey).toString("hex");
-
-
-          const prvt = toHex(child.privateKey);
-          const pblc = toHex(child.publicKey);
-
-
+        const prvt = toHex(child.privateKey);
+        const pblc = toHex(child.publicKey);
 
         setCurrentIndex(currentIndex + 1);
-      setPublicKeys([
-        ...publicKeys,
-        {
-          publicKey: prvt,
-          privateKey: pblc,
-        },
-      ])
+        setPublicKeys([
+          ...publicKeys,
+          {
+            publicKey: prvt,
+            privateKey: pblc,
+          },
+        ])
 
       } 
       
@@ -86,24 +84,18 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
         const wallet = new ethers.Wallet(`0x${ethprvt}`);
         const ethpblc = wallet.address;
         
-
-        
-        
         setCurrentIndex(currentIndex + 1);
-      setPublicKeys([
-        ...publicKeys,
-        {
-          publicKey: ethpblc,
-          privateKey: ethprvt,
-        },
-      ])
-        
-
+        setPublicKeys([
+          ...publicKeys,
+          {
+            publicKey: ethpblc,
+            privateKey: ethprvt,
+          },
+        ])
       } else {
         throw new Error("Unsupported pathType");
       }
 
-      ;
     } catch (error) {
       console.error("Error deriving key:", error.message);
     }
@@ -121,19 +113,20 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
       {publicKeys.map((p, index) => (
         <div key={index}>
           <div className="wal">
-
             <div className="hd">
             <h3>Wallet {index+1}</h3>
             <button onClick={()=>dltprsnt(p)}>🗑</button>
-
             </div>
             <div className="key-cont">
               <h4>Public Key:<button onClick={()=>pblicCopyToClipboard(p.publicKey)}>⿻</button></h4>
               <p >{p.publicKey}</p>
               
-              <h4>Private Key: <button onClick={()=>prvtCopyToClipboard(p.privateKey)}>⿻</button></h4>
-              <p  >{p.privateKey}</p>
-              
+              <h4>Private Key: <button onClick={()=>prvtCopyToClipboard(p.privateKey)}>⿻</button> 
+                <button onClick={() => toggleVisibility(index)}>
+                  {visibleKeys[index] ? "hide" : "show"}
+                </button>
+              </h4>
+              <p style={{ visibility: visibleKeys[index] ? 'visible' : 'hidden' }}>{p.privateKey}</p>
             </div>
           </div>
         </div>
