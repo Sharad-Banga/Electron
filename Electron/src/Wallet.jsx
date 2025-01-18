@@ -1,4 +1,5 @@
 import "./Wallet.css";
+
 import { useState } from "react";
 import { mnemonicToSeedSync } from "@scure/bip39";
 // import { derivePath } from "ed25519-hd-key";
@@ -51,10 +52,19 @@ export const Wallet = ({ phrase, pathType ,coin }) => {
         console.log("child",child);
 
 
-        // const prvt =  child.privateKey.toString("hex");
-        // const pblc = child.publicKey.toString("hex");
-         const prvt =  Buffer.from(child.privateKey).toString("hex");
-         const pblc = Buffer.from(child.publicKey).toString("hex");
+        const p1 =  child.privateKey.toString("hex");
+        const p2 = child.publicKey.toString("hex");
+        //  const prvt =  Buffer.from(child.privateKey).toString("hex");
+        //  const pblc = Buffer.from(child.publicKey).toString("hex");
+
+        const decoder = new TextDecoder('utf-8');
+
+        const prvt = decoder.decode(p1);
+        const pblc = decoder.decode(p2);
+
+
+
+
 
         setCurrentIndex(currentIndex + 1);
       setPublicKeys([
