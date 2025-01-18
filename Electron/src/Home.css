@@ -44,3 +44,31 @@
 .home-cnt  .btn-2{
   margin-left: 20px;
 }
+@media (max-width: 768px) {
+  .home-cnt {
+      padding-left: 5%; /* Adjust padding */
+  }
+
+  .home-cnt .home-text {
+      font-size: xx-large; /* Adjust font size */
+  }
+
+  .home-cnt .home-text span {
+      font-size: medium; /* Adjust font size */
+  }
+
+  .home-cnt button {
+      font-size: medium; /* Adjust button font size */
+      padding: 10px; /* Adjust button padding */
+  }
+
+  .home-cnt button:hover {
+      background-color: black;
+      color: white;
+      border: 0.5px solid white;
+  }
+
+  .home-cnt .btn-2 {
+      margin-left: 10px; /* Adjust button margin */
+  }
+}

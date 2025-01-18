@@ -62,3 +62,41 @@
   color: #888;
   margin-top: 20px;
 }
+
+
+@media screen and (max-width: 768px) {
+  .seedphrase-container {
+    width: 90vw; /* Adjust width for mobile devices */
+    margin-left: 5%; /* Reduce margin for better alignment */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .seedphrase-container .header-seed {
+    flex-direction: column; /* Stack header content vertically */
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .seedphrase-container .header-seed button {
+    font-size: 1.2rem; /* Adjust button font size for mobile */
+  }
+
+  .mnemonic-grid {
+    grid-template-columns: repeat(2, 1fr); /* Use 2 columns on small screens */
+    gap: 10px; /* Reduce gap between grid items */
+  }
+
+  .mnemonic-word {
+    padding: 10px 5px; /* Adjust padding to fit better on mobile */
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+
+  .copy-info {
+    font-size: 0.8rem; /* Reduce font size for mobile screens */
+  }
+
+  .placeholder {
+    font-size: 0.9rem; /* Adjust placeholder font size for smaller screens */
+    margin-top: 15px;
+  }
+}
