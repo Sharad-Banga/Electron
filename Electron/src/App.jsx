@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Home } from "./Home";
-import { Solana } from "./solana";
+import { Solana } from "./Solana";
 import {Ethereum} from './Ethereum'
 
 import './App.css';
