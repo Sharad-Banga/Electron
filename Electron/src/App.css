@@ -34,10 +34,11 @@
 .nav .home-link{
   color: white;
   text-decoration: none;
-  width: 60px;
+  width: 80px;
   font-size: larger;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 600;
+  font-size: larger;
+  font-family:sans-serif
 
 }
 
