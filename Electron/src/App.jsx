@@ -5,7 +5,7 @@ import { Home } from "./Home";
 import { Solana } from "./Solana";
 import {Ethereum} from './Ethereum'
 
-import './App.css';
+import './App.css'; 
 
 function App() {
   return (
